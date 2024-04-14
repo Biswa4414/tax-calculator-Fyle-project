@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h1>Tax Calculator</h1>
+      <form id="taxForm" class="form">
+        <div>
+          <label for="income"
+            >Enter gross annual income
+            <i
+              class="fas fa-question-circle question-icon"
+              data-tooltip="Gross annual income is your total salary in a year before any deductions"
+            ></i>
+          </label>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter gross annual income"
+            id="income"
+            name="income"
+            required
+          />
+          <i
+            class="fas fa-exclamation-circle error-icon"
+            data-tooltip="Please enter numbers only"
+          ></i>
+          <div class="tooltip"></div>
+        </div>
+        <div>
+          <label for="extra-income"
+            >Enter extra income
+            <i
+              class="fas fa-question-circle question-icon"
+              data-tooltip="Income from other sources"
+            ></i>
+          </label>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter extra income from other sources"
+            id="extra-income"
+            name="extra-income"
+            required
+          />
+        </div>
+        <div>
+          <label for="age"
+            >Enter age group
+            <i
+              class="fas fa-question-circle question-icon"
+              data-tooltip="  30% for people with age < 40
+  40% for people with age ≥ 40 but < 60
+  10% for people with age ≥ 60"
+            ></i>
+          </label>
+        </div>
+        <div>
+          <select name="age" id="age">
+            <option value="<40"><40</option>
+            <option value="≥ 40 & < 60">≥ 40 & < 60</option>
+            <option value="≥ 60">≥ 60</option>
+          </select>
+        </div>
+        <div>
+          <label for="deductions"
+            >Enter total applicable deduction
+            <i
+              class="fas fa-question-circle question-icon"
+              data-tooltip="A tax deduction is a total amount an individual can claim to reduce their tax liability"
+            ></i>
+          </label>
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter total applicable deduction"
+            id="deductions"
+            name="deductions"
+            required
+          />
+        </div>
+        <div class="btn">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+      <div id="modal" class="modal">
+        <div class="modal-content">
+             <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
